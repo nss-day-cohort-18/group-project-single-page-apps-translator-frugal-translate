@@ -11,11 +11,11 @@ var Translator = (function(Translator ){
 		"year":"année"
 	}
 
-	Translator.translateToFrench = function(topping ){
-		return for(word in french ){
-			french[word]
-		}
-	};
+	// Translator.translateToFrench = function(topping ){
+	// 	return for(word in french ){
+	// 		french[word]
+	// 	}
+	// };
 
 	return Translator;
 
