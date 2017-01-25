@@ -15,8 +15,14 @@ var Translator = (function(originalTranslator){
 	var frenchValues = Object.values(french);
 
  	originalTranslator.translateToFrench = function(array){
-
-		var outPut = array.slice(0, -1);
+		
+		var outPut = [];
+ 		
+ 		if(array.length === 1) 
+ 			outPut = array;
+ 		else 
+ 			outPut = array.slice(0, -1);
+ 		
 
 		// this loop controls which input word we are comparing to our dictionary
 		for (var q = 0; q < outPut.length; q++ ){
