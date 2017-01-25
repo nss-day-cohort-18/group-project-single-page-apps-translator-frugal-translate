@@ -13,8 +13,18 @@ var lang = selectMenu[selectedLang];
 selectMenu.addEventListener("valuechange", function(){
 	selectedLang = selectMenu.selectedIndex;
 	lang = selectMenu[selectedLang];
-	console.log(lang)
 });
+
+//if option selection is changed while text in inside of inputField
+//the input box will reset
+selectMenu.onchange = function() {
+	if (userString.length > 0) {
+//		document.getElementById("text").reset();
+		userString = "";
+		display.innerHTML = "";
+		console.log(lang)
+	}
+}
 
 //all translation happens live. We check each of the user's keystrokes
 //and log them to a variable, then pass that string to an array
@@ -40,7 +50,7 @@ inputField.addEventListener('keyup', function(event){
 		workingArray.pop();
 		display.innerHTML = workingArray.join(" ");						// pop removes a word from the working array
 	}
- }	
+ }
 });
 
 //this bad boy checks which language to translate into
@@ -50,9 +60,14 @@ function pickLanguage(array){
     if(document.getElementById('french').selected ){
 	    return Translator.translateToFrench(array);
 	}
+
+
 	// else if(document.getElementById('spanish').selected ){
 	// 	Translator.translateToSpanish(array);
 	// }
+
+
+
 	else if (document.getElementById('german').selected ){
 		return Translator.translateToGerman(array);
 	}
