@@ -8,7 +8,18 @@ var Translator = (function(originalTranslator){
 		"and":"und",
 		"happy":"gutes",
 		"new":"neues",
-		"year":"Jahr"
+		"year":"Jahr",
+		"holiday":"Festtag",
+		"blessed":"gesegnetes",
+		"best": "alles",
+		"wishes":"Gute",
+		"the":"das",
+		"spice":"Gewürz",
+		"must":"muss",
+		"flow":"fließen",
+		"don't":"Keine",
+		"panik":"Panik",
+
 	}
 
 	var germanKeys = Object.keys(german);
