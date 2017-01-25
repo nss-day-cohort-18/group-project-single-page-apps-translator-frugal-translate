@@ -3,7 +3,7 @@
 var inputField = document.getElementById('text');
 var display = document.getElementById("display");
 var userString = '';
-var selectMenu = document.getElementById('language');
+var selectMenu = documgent.getElementById('language');
 var selectedLang = selectMenu.selectedIndex;
 var lang = selectMenu[selectedLang];
 
@@ -20,9 +20,9 @@ selectMenu.addEventListener("valuechange", function(){
 selectMenu.onchange = function() {
 	if (userString.length > 0) {
 //		document.getElementById("text").reset();
-		userString = "";
+		inputField.value = "";
 		display.innerHTML = "";
-		console.log(lang)
+		console.log(lang);
 	}
 }
 
@@ -60,17 +60,12 @@ function pickLanguage(array){
     if(document.getElementById('french').selected ){
 	    return Translator.translateToFrench(array);
 	}
-
-
-	// else if(document.getElementById('spanish').selected ){
-	// 	Translator.translateToSpanish(array);
-	// }
-
-
-
+	else if(document.getElementById('spanish').selected ){
+		Translator.translateToSpanish(array);
+	}
 	else if (document.getElementById('german').selected ){
 		return Translator.translateToGerman(array);
 	}
-
-	else return 'Please select a language';
+	else 
+		return 'Please select a language';
 }

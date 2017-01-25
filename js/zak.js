@@ -12,29 +12,23 @@ var Translator = (function( ){
 	}
 
 	var frenchKeys = Object.keys(french);
-
+	var frenchValues = Object.values(french);
 	 return {
-	 	translateToFrench : function(array){
-	 		console.log('translating...', array, frenchKeys)
+
+	 	translateToFrench : function(array ){
+
 			var outPut = array.slice(0, -1);
 
-			for (var q = 0; i < outPut.length[-1]; i++) {
-					outPut[q] = frenchKeys[i];
-
-
-
-					for (var i = 0; i < frenchKeys.length; i++){
-						if (outPut[q] === frenchKeys[i]) {
-							outPut[q] = french[frenchKeys[i]];
-					}
-				//	console.log(frenchKeys[i], french[frenchKeys[i]])
-				//	console.log("return: ", outPut)
-
-						outPut = outPut.join(" ");
-				console.log("outPUT: ", outPut);
-				}
-					return outPut
+			for (var q = 0; q < outPut.length; q++ ){
+				for (var i = 0; i < frenchKeys.length; i++){
+					if (outPut[q] === frenchKeys[i] ){
+						outPut[q] = frenchValues[i];
+					}	
 				}
 			}
+			outPut = outPut.join(" ");
+			console.log("outPUT: ", outPut);
+			return outPut;
 		}
+	}
 })();

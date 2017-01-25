@@ -12,16 +12,25 @@ var Translator = (function( ){
 	}
 
 	var germanKeys = Object.keys(german);
-
+	var germanValues = Object.values(german);
+	
 	 return {
 	 	translateToGerman : function(array ){
-	 		console.log('translating...', array, germanKeys)
-			for( var i = 0; i < germanKeys.length; i++ ){
-				if (array[array.length - 2] === germanKeys[i]) {
-					console.log(germanKeys[i], german[germanKeys[i]])
-					return german[germanKeys[i]];
+
+			var outPut = array.slice(0, -1);
+
+			// this loop controls which input word we are comparing to our dictionary
+			for (var q = 0; q < outPut.length; q++ ){
+				//this loop compares the input word to all words in our dictionary
+				for (var i = 0; i < germanKeys.length; i++){
+					if (outPut[q] === germanKeys[i] ){
+						outPut[q] = germanValues[i];
+					}
 				}
 			}
-		} 
+			outPut = outPut.join(" ");
+			console.log("outPUT: ", outPut);
+			return outPut;
+		}
 	}
-})(Translator);
+})();
