@@ -3,12 +3,12 @@
 var Translator = (function( ){
 
 	var spanish = {
-		"merry":"frohe", 
-		"christmas":"weihnachten", 
-		"and":"und",
-		"happy":"gutes", 
-		"new":"neues", 
-		"year":"Jahr"
+		"merry":"Meey",
+ -		"christmas":"Navidad",
+ -		"and":"y",
+ -		"happy":"contento",
+ -		"new":"nuevo",
+ -		"year":"año"
 	}
 
 	var spanishKeys = Object.keys(spanish);
