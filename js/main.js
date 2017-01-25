@@ -44,12 +44,12 @@ function pickLanguage(array ){
     if(document.getElementById('french').selected ){
 	    Translator.translateToFrench(array);
 	}
-	else if(document.getElementById('spanish').selected ){
-		Translator.translateToSpanish(array); 
-	}
-	else if (document.getElementById('german').selected ){
-		Translator.translateToGerman(array);	
-	}
+	// else if(document.getElementById('spanish').selected ){
+	// 	Translator.translateToSpanish(array); 
+	// }
+	// else if (document.getElementById('german').selected ){
+	// 	Translator.translateToGerman(array);	
+	// }
 	else
 		return 'Please select a language';
 }
