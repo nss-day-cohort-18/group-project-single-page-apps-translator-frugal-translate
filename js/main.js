@@ -12,21 +12,21 @@ var lang = selectMenu[selectedLang];
 
 selectMenu.addEventListener("valuechange", function(){
 	selectedLang = selectMenu.selectedIndex;
-	lang = selectMenu[selectedLang]; 
+	lang = selectMenu[selectedLang];
 	console.log(lang)
 });
 
 //all translation happens live. We check each of the user's keystrokes
-//and log them to a variable, then pass that string to an array 
+//and log them to a variable, then pass that string to an array
 //called workingArray via '.split()'. if we have a complete word,
 //signified by the user entering a space, we check which language
-//the user wants us to translate their text into, then pass the 
-//array into our language picking function 'pickLanguage'. 
+//the user wants us to translate their text into, then pass the
+//array into our language picking function 'pickLanguage'.
 //'pickLanguage()' then translates by calling Translator.translateTo{language}
 
 inputField.addEventListener('keyup', function(event){
-	
-	
+
+
 	userString = inputField.value;
 	console.log(userString);
 
@@ -34,50 +34,28 @@ inputField.addEventListener('keyup', function(event){
 	console.log(workingArray);
 
 	if (workingArray.length > 1) {
-	display.innerHTML += pickLanguage(workingArray);
+	display.innerHTML = pickLanguage(workingArray);
+
+	if (event.keyCode === 8 && userString[userString.length -1] === (" ")) {
+		workingArray.pop();
+		display.innerHTML = workingArray.join(" ");						// pop removes a word from the working array
 	}
+ }	
 });
 
 //this bad boy checks which language to translate into
 
-function pickLanguage(array ){
- 	
+function pickLanguage(array){
+
     if(document.getElementById('french').selected ){
 	    return Translator.translateToFrench(array);
 	}
 	// else if(document.getElementById('spanish').selected ){
-	// 	Translator.translateToSpanish(array); 
+	// 	Translator.translateToSpanish(array);
 	// }
 	else if (document.getElementById('german').selected ){
-		return Translator.translateToGerman(array);	
+		return Translator.translateToGerman(array);
 	}
-	
+
 	else return 'Please select a language';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
