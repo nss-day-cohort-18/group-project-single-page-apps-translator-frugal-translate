@@ -67,7 +67,7 @@ function pickLanguage(array){
 	    return Translator.translateToFrench(array);
 	}
 	else if(document.getElementById('spanish').selected ){
-		Translator.translateToSpanish(array);
+	 return	Translator.translateToSpanish(array);
 	}
 	else if (document.getElementById('german').selected ){
 		return Translator.translateToGerman(array);
