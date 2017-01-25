@@ -41,16 +41,43 @@ inputField.addEventListener('keyup', function(event){
 //this bad boy checks which language to translate into
 
 function pickLanguage(array ){
- 
+ 	
     if(document.getElementById('french').selected ){
 	    return Translator.translateToFrench(array);
 	}
 	// else if(document.getElementById('spanish').selected ){
 	// 	Translator.translateToSpanish(array); 
 	// }
-	// else if (document.getElementById('german').selected ){
-	// 	Translator.translateToGerman(array);	
-	// }
-	else
-		return 'Please select a language';
+	else if (document.getElementById('german').selected ){
+		return Translator.translateToGerman(array);	
+	}
+	
+	else return 'Please select a language';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
