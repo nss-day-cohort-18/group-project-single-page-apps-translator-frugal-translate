@@ -18,7 +18,7 @@ var Translator = (function(originalTranslator){
 		"must":"muss",
 		"flow":"fließen",
 		"don't":"Keine",
-		"panik":"Panik",
+		"panic":"Panik",
 
 	}
 
