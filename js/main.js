@@ -37,7 +37,7 @@ selectMenu.onchange = function() {
 inputField.addEventListener('keyup', function(event){
 
 
-	userString = inputField.value;
+	userString = inputField.value.toLowerCase();
 	console.log(userString);
 
 	var workingArray = userString.split(" ");
