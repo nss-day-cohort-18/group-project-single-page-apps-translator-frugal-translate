@@ -1,5 +1,5 @@
 'use strict';
-console.log("Hola :"); 
+console.log("Hola :");
 var Translator = (function( ){
 
 	var spanish = {
@@ -20,6 +20,7 @@ var Translator = (function( ){
 
 	      	var outPut = array.slice(0, -1);
 
+
 	    	// this loop controls which input word we are comparing to our dictionary
 	    	for (var q = 0; q < outPut.length; q++ ){
 	    		//this loop compares the input word to all words in our dictionary
@@ -33,5 +34,8 @@ var Translator = (function( ){
 	    	console.log("outPUT: ", outPut);
 	    	return outPut;
 	    }
+
+
+
 	}
 })();
