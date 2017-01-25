@@ -37,20 +37,26 @@ selectMenu.onchange = function() {
 inputField.addEventListener('keyup', function(event){
 
 
-	userString = inputField.value;
+	userString = inputField.value.toLowerCase();
 	console.log(userString);
 
 	var workingArray = userString.split(" ");
 	console.log(workingArray);
 
+	//translate and print to screen
 	if (workingArray.length > 1) {
-	display.innerHTML = pickLanguage(workingArray);
-
-	if (event.keyCode === 8 && userString[userString.length -1] === (" ")) {
-		workingArray.pop();
-		display.innerHTML = workingArray.join(" ");						// pop removes a word from the working array
+		display.innerHTML = pickLanguage(workingArray);
 	}
- }
+	if (event.keyCode === 8 && userString[userString.length -1] === (" ")) {
+		console.log('backspace start: ', workingArray)
+		workingArray.pop();
+		display.innerHTML = pickLanguage(workingArray);						// pop removes a word from the working array
+		console.log('backspace finish: ', workingArray)
+	}
+	if (workingArray.length === 1 && userString === '' ){
+		workingArray = [];
+		display.innerHTML = pickLanguage(workingArray);
+	}
 });
 
 //this bad boy checks which language to translate into
