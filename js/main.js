@@ -10,7 +10,7 @@ var lang = selectMenu[selectedLang];
 
 //add listener that logs a changed function
 
-selectMenu.addEventListener("ValueChange", function(){
+selectMenu.addEventListener("valuechange", function(){
 	selectedLang = selectMenu.selectedIndex;
 	lang = selectMenu[selectedLang]; 
 	console.log(lang)
@@ -24,7 +24,8 @@ selectMenu.addEventListener("ValueChange", function(){
 //array into our language picking function 'pickLanguage'. 
 //'pickLanguage()' then translates by calling Translator.translateTo{language}
 
-inputField.addEventListener('keyup', function(){
+inputField.addEventListener('keyup', function(event){
+	
 	
 	userString = inputField.value;
 	console.log(userString);
@@ -33,7 +34,7 @@ inputField.addEventListener('keyup', function(){
 	console.log(workingArray);
 
 	if (workingArray.length > 1) {
-	display.innerHTML = pickLanguage(workingArray);
+	display.innerHTML += pickLanguage(workingArray);
 	}
 });
 
@@ -42,7 +43,7 @@ inputField.addEventListener('keyup', function(){
 function pickLanguage(array ){
  
     if(document.getElementById('french').selected ){
-	    Translator.translateToFrench(array);
+	    return Translator.translateToFrench(array);
 	}
 	// else if(document.getElementById('spanish').selected ){
 	// 	Translator.translateToSpanish(array); 
@@ -53,5 +54,3 @@ function pickLanguage(array ){
 	else
 		return 'Please select a language';
 }
-
-

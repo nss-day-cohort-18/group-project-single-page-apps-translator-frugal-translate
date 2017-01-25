@@ -1,6 +1,6 @@
 'use strict';
 
-var Translator = (function(Translator ){
+var Translator = (function( ){
 
 	var french = {
 		"merry":"joyeux", 
@@ -11,16 +11,18 @@ var Translator = (function(Translator ){
 		"year":"année"
 	}
 
-	var keys = Object.keys(french);
-	
-	 return Translator.translateToFrench = function(array ){
-		
-		for (key in keys) {
-			if (array[array.length - 1] === key)
-				return french[key];
-		}
-	}; 
+	var frenchKeys = Object.keys(french);
 
-	return Translator;
+	 return {
+	 	translateToFrench : function(array ){
+	 		console.log('translating...', array, frenchKeys)
+			for( var i = 0; i < frenchKeys.length; i++ ){
+				if (array[array.length - 2] === frenchKeys[i]) {
+					console.log(frenchKeys[i], french[frenchKeys[i]])
+					return french[frenchKeys[i]];
+				}
+			}
+		} 
+	}
+})();
 
-})(Translator);
