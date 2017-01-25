@@ -1,36 +1,35 @@
 'use strict';
-
-var Translator = (function( ){
+console.log("honzit");
+var Translator = (function(originalTranslator){
 
 	var german = {
-		"merry":"frohe", 
-		"christmas":"weihnachten", 
+		"merry":"frohe",
+		"christmas":"weihnachten",
 		"and":"und",
-		"happy":"gutes", 
-		"new":"neues", 
+		"happy":"gutes",
+		"new":"neues",
 		"year":"Jahr"
 	}
 
 	var germanKeys = Object.keys(german);
 	var germanValues = Object.values(german);
-	
-	 return {
-	 	translateToGerman : function(array ){
 
-			var outPut = array.slice(0, -1);
+ 	originalTranslator.translateToGerman = function(array){
 
-			// this loop controls which input word we are comparing to our dictionary
-			for (var q = 0; q < outPut.length; q++ ){
-				//this loop compares the input word to all words in our dictionary
-				for (var i = 0; i < germanKeys.length; i++){
-					if (outPut[q] === germanKeys[i] ){
-						outPut[q] = germanValues[i];
-					}
+		var outPut = array.slice(0, -1);
+
+		// this loop controls which input word we are comparing to our dictionary
+		for (var q = 0; q < outPut.length; q++ ){
+			//this loop compares the input word to all words in our dictionary
+			for (var i = 0; i < germanKeys.length; i++){
+				if (outPut[q] === germanKeys[i] ){
+					outPut[q] = germanValues[i];
 				}
 			}
-			outPut = outPut.join(" ");
-			console.log("outPUT: ", outPut);
-			return outPut;
 		}
+		outPut = outPut.join(" ");
+		console.log("outPUT: ", outPut);
+		return outPut;
 	}
-})();
+	return originalTranslator;
+})(Translator);

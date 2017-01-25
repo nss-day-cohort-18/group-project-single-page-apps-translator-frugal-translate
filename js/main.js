@@ -3,7 +3,7 @@
 var inputField = document.getElementById('text');
 var display = document.getElementById("display");
 var userString = '';
-var selectMenu = documgent.getElementById('language');
+var selectMenu = document.getElementById('language');
 var selectedLang = selectMenu.selectedIndex;
 var lang = selectMenu[selectedLang];
 
@@ -66,6 +66,6 @@ function pickLanguage(array){
 	else if (document.getElementById('german').selected ){
 		return Translator.translateToGerman(array);
 	}
-	else 
+	else
 		return 'Please select a language';
 }
